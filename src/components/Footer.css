@@ -1,0 +1,10 @@
+.footerContainer{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.rightContiner{
+    color: rgb(145, 145, 145);
+    font-weight: bold;
+}

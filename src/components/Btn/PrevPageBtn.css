@@ -1,0 +1,19 @@
+.prevPageBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    border: 2px solid rgb(240, 239, 239);
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.prevpageBtnImg{
+    width: 15px;
+}
+.prevPageBtn:hover{
+    cursor: pointer;
+    border: 2px solid rgb(182, 180, 180);
+    background-color: rgb(252, 252, 252);
+}

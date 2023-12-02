@@ -1,0 +1,9 @@
+.paginationContainer{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.rightText{
+    font-weight: bold;
+    margin-right: 50px;
+}

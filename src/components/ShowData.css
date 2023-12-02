@@ -1,0 +1,16 @@
+
+tr{
+    border: 1px solid black;
+}
+td{
+    padding: 5px 15px;
+}
+.nameSection{
+    display: flex;
+}
+.select{
+    margin-right: 30px;
+}
+.actions{
+    display: flex;
+}

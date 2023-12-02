@@ -1,0 +1,19 @@
+.editButton{
+    width:30px;
+    border: 2px solid rgb(240, 239, 239);
+    border-radius: 5px;
+    /* background-color: gray; */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.editIcon{
+    width: 18px;
+}
+.editButton:hover{
+    cursor: pointer;
+    border: 2px solid rgb(182, 180, 180);
+    background-color: rgb(252, 252, 252);
+}
