@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Table.css'
-import {DeleteBtn, EditBtn} from './index'
 import {ShowData} from './index'
-import {data} from '../assets/dummyData'
+import { useSelector } from 'react-redux'
 
 export default function Table() {
-    
+
+    const userData = useSelector((state) => (state.users.value[1]));
+    const pageNumber = useSelector((state) => (state.pageNumber.value))
+
+    const pageData = userData.slice((pageNumber - 1) * 10, ((pageNumber - 1) * 10) + 10);
+    console.log(pageData);
+
   return (
     <>
         <table>
@@ -23,7 +28,7 @@ export default function Table() {
             <tbody>
                 
 
-                {data.map((dataItem) => (
+                {pageData && pageData.map((dataItem) => (
                     <ShowData 
                     key={dataItem.id} 
                     name = {dataItem.name}

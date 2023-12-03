@@ -18,3 +18,7 @@
     border: 2px solid rgb(182, 180, 180);
     background-color: rgb(252, 252, 252);
 }
+.disableLastBtn{
+    pointer-events: none;
+    opacity: 0.3;
+}
