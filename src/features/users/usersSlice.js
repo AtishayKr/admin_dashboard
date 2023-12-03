@@ -16,7 +16,9 @@ export const usersSlice = createSlice({
             state.value = state.value.filter((dataItem) => (dataItem.id !== action.payload) )
         },
         updateData: (state,action) => {
-            state.value.map((dataItem) => (dataItem.id === action.payload.id ? dataItem = action.payload.data : value))
+            state.value.map((dataItem) => (dataItem.id === action.payload.id ? dataItem.name = action.payload.newName : dataItem))
+            state.value.map((dataItem) => (dataItem.id === action.payload.id ? dataItem.email = action.payload.newEmail : dataItem))
+            state.value.map((dataItem) => (dataItem.id === action.payload.id ? dataItem.role = action.payload.newRole : dataItem))
         }
     }
 })

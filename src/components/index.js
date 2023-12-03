@@ -1,5 +1,6 @@
 import Header from "./Header"
 import Table from './Table'
+import SaveBtn from "./Btn/SaveBtn";
 import DeleteBtn from './Btn/DeleteBtn'
 import EditBtn from "./Btn/EditBtn";
 import Pagination from "./pagination";
@@ -23,5 +24,6 @@ export {
     NextPageBtn, 
     PrevPageBtn,
     ShowData,
-    PageBtn
+    PageBtn,
+    SaveBtn
 };

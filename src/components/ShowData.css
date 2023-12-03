@@ -1,7 +1,7 @@
 
-tr{
+/* tr{
     border: 1px solid black;
-}
+} */
 td{
     padding: 5px 15px;
 }
@@ -13,4 +13,7 @@ td{
 }
 .actions{
     display: flex;
+}
+#name:focus{
+    outline: none;
 }

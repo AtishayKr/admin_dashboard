@@ -29,7 +29,7 @@ td{
 .actions{
     display: flex;
 }
-tr:hover{
+/* tr:hover{
     cursor: pointer;
     background-color: rgb(245, 245, 245);
-}
+} */

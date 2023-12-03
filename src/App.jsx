@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css'
 import {Footer, Header, Table} from './components'
 import useUsersInfo from './hooks/useUsersInfo'
