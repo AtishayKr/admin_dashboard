@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 
 export default function Footer() {
   
-  const users = useSelector((state) => (state.users.value[1]))
+  const users = useSelector((state) => (state.users.value))
   return (
     <>
         <div className='footerContainer'>

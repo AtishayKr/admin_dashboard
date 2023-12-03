@@ -7,7 +7,7 @@ import { setPageNumber } from '../../features/pages/pageNumberSlice'
 export default function NextPageBtn({disabled=false}) {
 
   const pageNumber = useSelector((state) => (state.pageNumber.value));
-  const usersData = useSelector((state) => (state.users.value[1]))
+  const usersData = useSelector((state) => (state.users.value))
   const totalPage = Math.ceil(usersData.length / 10);
   const dispatch = useDispatch();
 

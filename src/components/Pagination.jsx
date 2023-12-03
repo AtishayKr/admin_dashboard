@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 export default function Pagination() {
 
   const pageNumber = useSelector((state) => (state.pageNumber.value))
-  const usersData = useSelector((state) => (state.users.value[1]))
+  const usersData = useSelector((state) => (state.users.value))
   const totalPage = Math.ceil(usersData.length / 10);
   // console.log(totalPage);
 
