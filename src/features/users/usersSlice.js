@@ -12,17 +12,20 @@ export const usersSlice = createSlice({
             state.value = action.payload
         },
         deleteData: (state, action) => {
-            console.log(action.payload)
+            // console.log(action.payload)
             state.value = state.value.filter((dataItem) => (dataItem.id !== action.payload) )
         },
         updateData: (state,action) => {
             state.value.map((dataItem) => (dataItem.id === action.payload.id ? dataItem.name = action.payload.newName : dataItem))
             state.value.map((dataItem) => (dataItem.id === action.payload.id ? dataItem.email = action.payload.newEmail : dataItem))
             state.value.map((dataItem) => (dataItem.id === action.payload.id ? dataItem.role = action.payload.newRole : dataItem))
+        },
+        toggleChecked: (state, action) => {
+            state.value.map((dataItem) => (dataItem.id === action.payload ? dataItem.checked = !dataItem.checked : dataItem))
         }
     }
 })
 
-export const {addData,deleteData, updateData} = usersSlice.actions
+export const {addData,deleteData, updateData, toggleChecked} = usersSlice.actions
 
 export default usersSlice.reducer

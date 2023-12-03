@@ -1,35 +1,48 @@
 import React, { useState } from 'react'
 import {DeleteBtn, EditBtn, SaveBtn} from './index'
-import {useDispatch } from 'react-redux'
-import {deleteData, updateData} from '../features/users/usersSlice'
+import {useDispatch, useSelector } from 'react-redux'
+import {deleteData, updateData, toggleChecked} from '../features/users/usersSlice'
 import './showData.css'
 
-export default function ShowData({id, name, email, role}) {
+export default function ShowData({id, name, email, role, isChecked}) {
+    console.log(`is checked ${isChecked}`)
     const [isEditable, setIsEditable] = useState(false);
     const [newName, setNewName] = useState(name);
     const [newEmail, setNewEmail] = useState(email);
     const [newRole, setNewRole] = useState(role);
 
     const dispatch = useDispatch();
+    const data = useSelector((state) => state.users.value)
 
     const editBtnHandler = () => {
         setIsEditable(true)
     }
 
     const saveBtnHandler = () => {
-        setIsEditable(false);
-        console.log(newName);
+        setIsEditable(false)
+        // console.log(newName)
         dispatch(updateData({id, newName, newEmail, newRole}))
     }
     const deleteBtnHandler = () => {
-        dispatch(deleteData(id));
+        dispatch(deleteData(id))
+    }
+    const checkedBtnHandler = () => {
+        dispatch(toggleChecked(id))
+        // console.log("clicked")
     }
 
   return (
-    <tr>
+    <tr className={isChecked ? 'changeBackGround' : ''}>
         <td>
             <div className='nameSection'>
-                <input type='checkbox' className='select'/> 
+                {/* {isChecked ? 
+                    <input type='checkbox' onClick={checkedBtnHandler} checked className='select'/> :
+                    <input type='checkbox' onClick={checkedBtnHandler} className='select'/>
+                    
+                } */}
+                {isChecked && <input type='checkbox' onClick={checkedBtnHandler} checked className='select'/>}
+                {!isChecked && <input type='checkbox' onClick={checkedBtnHandler} className='select'/>}
+                
                 {!isEditable ? 
                     <input  
                     type="text" 
@@ -37,7 +50,7 @@ export default function ShowData({id, name, email, role}) {
                     id='name' 
                     value={newName}
                     readOnly
-                    style={{borderColor: 'transparent'}}
+                    style={{borderColor: 'transparent', backgroundColor: 'transparent'}}
                     /> : 
                     <input  
                     type="text" 
@@ -57,7 +70,7 @@ export default function ShowData({id, name, email, role}) {
                 id='name' 
                 value={newEmail} 
                 readOnly 
-                style={{borderColor: 'transparent'}}
+                style={{borderColor: 'transparent', backgroundColor: 'transparent'}}
                 /> : 
                 <input  
                 type="text" 
@@ -76,7 +89,7 @@ export default function ShowData({id, name, email, role}) {
                 id='name' 
                 value={newRole} 
                 readOnly 
-                style={{borderColor: 'transparent'}}
+                style={{borderColor: 'transparent' , backgroundColor: 'transparent'}}
                 /> : 
                 <input  
                 type="text" 
